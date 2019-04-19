@@ -43,16 +43,16 @@ for filename1 in os.listdir(img_dir1):
 X_train, X_test, y_train, y_test = train_test_split(images, name, test_size=0.25, random_state=42)
 X_test=np.asarray(X_test)
 X_train=np.asarray(X_train)
-y_train=np.asarray(y_train).reshape(1509,1)
-y_test=np.asarray(y_test).reshape(504,1)
-X_train=X_train.reshape(1509,120*180*3)
-X_test=X_test.reshape(504,120*180*3)
+y_train=np.asarray(y_train).reshape(1496,1)
+y_test=np.asarray(y_test).reshape(499,1)
+X_train=X_train.reshape(1496,120*180*3)
+X_test=X_test.reshape(499,120*180*3)
 from sklearn.preprocessing import StandardScaler
 st=StandardScaler()
 X_train=st.fit_transform(X_train)
 X_test=st.transform(X_test)
-X_train=X_train.reshape(1509,120,180,3)
-X_test=X_test.reshape(504,120,180,3)
+X_train=X_train.reshape(1496,120,180,3)
+X_test=X_test.reshape(499,120,180,3)
 '''X_total=np.zeros((1995,227,227,3))
 X_total[0:1396]=X_train[0:1396]
 X_total[1396:1995]=X_test[0:599]'''
@@ -132,9 +132,9 @@ autoencoder.get_weights()[0][1]
 autoencoder1.get_weights()[0][1]
 
 X_t = autoencoder1.predict(X_train)
-X_t = X_t.reshape(1509,15*22*32)
+X_t = X_t.reshape(1496,15*22*32)
 X_te = autoencoder1.predict(X_test)
-X_te = X_te.reshape(504,15*22*32)
+X_te = X_te.reshape(499,15*22*32)
 
 from sklearn.preprocessing import StandardScaler
 st=StandardScaler()
