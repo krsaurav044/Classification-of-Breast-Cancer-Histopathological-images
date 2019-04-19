@@ -16,7 +16,7 @@ from sklearn.feature_extraction import image
 from keras.regularizers import l2
 from sklearn.manifold import LocallyLinearEmbedding
 
-img_dir = "D:\\ml\\projects\\breast_cancer\\dataset\\benign\\200x"
+img_dir = "D:\\ml\\projects\\breast_cancer\\dataset\\benign\\40x"
 
 images=[]
 name=[]
@@ -30,7 +30,7 @@ for filename in os.listdir(img_dir):
         i += 1
 
 
-img_dir1 = "D:\\ml\\projects\\breast_cancer\\dataset\\melignant\\200x"
+img_dir1 = "D:\\ml\\projects\\breast_cancer\\dataset\\melignant\\40x"
 
 for filename1 in os.listdir(img_dir1):
     img = cv2.imread(os.path.join(img_dir1,filename1))
